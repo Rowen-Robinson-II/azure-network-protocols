@@ -22,33 +22,40 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Creating a Virtual Machine
-- Dealing with Account Lockouts
+- Virtual Machine (pre-configured)
+- Configure Group Policy to Lockout the account after 5 attempts
 - Enabling and Disabling Accounts
 - Observing Logs
 
 <h2>Actions and Observations</h2>
 
-<p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/c0bf980b-fde7-4818-9681-cf91097b5101">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Two Virtual machines were created one named "DC-1" the other "Client-1" both are on the same virtual network, share the same resource group, and are in the same subnet.DC-1 was deployed with windows server 2022 while Client-1 was deployed with windows 10. Client-1's DNS settings have been configured to DC-1's private IP address.
 </p>
+<br>
+<br>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a97893-2f84-4c64-a708-45cb4b9044db">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+log into DC-1 go to Group Policy Management. Right-Click "Account Lockout Policy". Via Group Policy Management Editor go to Computer configuration -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Account Lockout policy. Configure the lockout settings, then link the policy the the specified domain. Force update the policy using Command Prompt by typing "gpupdate /force"
 </p>
+<br>
+<br>
 <br />
 
+
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
 </p>
+<br>
+<br>
 <br />
+
