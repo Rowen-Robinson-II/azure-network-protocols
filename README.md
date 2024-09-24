@@ -108,26 +108,5 @@ Filter wireshark traffic to only include DNS traffic using "nslookup" in powersh
 <br>
 <br />
 
-<h2>Additional Configurations</h2>
 
-<h3 align="center">Configure Group Policy to Lockout the account after 5 attempts</h3>
-<p>
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a97893-2f84-4c64-a708-45cb4b9044db">
-</p>
-<p>
-log into DC-1 go to Group Policy Management. Right-Click "Account Lockout Policy". Via Group Policy Management Editor go to Computer configuration -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Account Lockout policy. Configure the lockout settings, then link the policy the the specified domain. Force update the policy using Command Prompt by typing "gpupdate /force"
-</p>
-<br>
-<br>
-<br />
 
-<h3 align="center">Enabling and Disabling Accounts</h3>
-<p>
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
-</p>
-<p>
-To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
-</p>
-<br>
-<br>
-<br />
