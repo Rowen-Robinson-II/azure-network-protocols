@@ -21,7 +21,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 - Ubuntu Server 22.04
 
 
-<h2>Network Security Groups</h2>
+<h2>Network Security Groups (Confiuring A Firewall)</h2>
 
 <h3 align="center">Virtual Machines</h3>
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/3538c25d-5cb7-4fc8-807d-10c150378255">
@@ -33,23 +33,41 @@ Three Virtual machines were created: "DC-1", "Client-1", and "Client-2" all are 
 <br>
 <br />
 
-<h3 align="center">Configure Group Policy to Lockout the account after 5 attempts</h3>
+<h3 align="center">Configuring A Firewall</h3>
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/5c00c9bd-c986-471d-b674-1dcf54d9578e">
 <p>
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a97893-2f84-4c64-a708-45cb4b9044db">
-</p>
-<p>
-log into DC-1 go to Group Policy Management. Right-Click "Account Lockout Policy". Via Group Policy Management Editor go to Computer configuration -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Account Lockout policy. Configure the lockout settings, then link the policy the the specified domain. Force update the policy using Command Prompt by typing "gpupdate /force"
+From Client-1 ping Client-2's private IP address and observe traffic via wireshark
 </p>
 <br>
 <br>
 <br />
 
-<h3 align="center">Enabling and Disabling Accounts</h3>
+<h3 align="center">Configuring A Firewall</h3>
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/4a26af0f-8a55-493b-b6d4-baa71ca5e9e6">
 <p>
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+start a non-stop ping to Client-2
 </p>
+<br>
+<br>
+<br />
+
+<h3 align="center">Configuring A Firewall</h3>
+
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/fd6cb28a-1845-44b9-82c1-b0242ef93039">
 <p>
-To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+disable incoming ICMP traffic via Newtork Security Groups. Go to settings then inbound security rules. Create a rule with 290 priority that denies all traffic.
+</p>
+<br>
+<br>
+<br />
+
+<h3 align="center">Configuring A Firewall</h3>
+
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/0e15ece6-9d80-49b9-9d78-a32218343f45">
+<p>
+observe stopped ICMP traffic in wireshark, then re-enable incoming traffic
 </p>
 <br>
 <br>
@@ -57,23 +75,47 @@ To disable/enable an account go to Active Directory Users and Computers find a u
 
 <h2>Inspecting Traffic Between Azure Virtual Machines</h2>
 
-<h3 align="center">Enabling and Disabling Accounts</h3>
+<h3 align="center">Observing SSH Traffic</h3>
 <p>
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/fcd80aeb-fe46-4dee-bda5-c8074f2a2cac">
 </p>
 <p>
-To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+Filter wireshark traffic to only include SSH packets
 </p>
 <br>
 <br>
 <br />
 
-<h3 align="center">Enabling and Disabling Accounts</h3>
+<h3 align="center">Observing DHCP Traffic</h3>
 <p>
-<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/bdbac5e6-6571-43a6-9c23-5c24422200d4">
 </p>
 <p>
-To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+Filter wireshark traffic to only include DHCP traffic using "ipconfig /renew" in powershell as an administrator
+</p>
+<br>
+<br>
+<br />
+
+<h3 align="center">Observing DNS Traffic</h3>
+<p>
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/31034ba7-1325-491a-bf7d-06299fdc2fe3">
+</p>
+<p>
+Filter wireshark traffic to only include DNS traffic using "nslookup" in powershell as an administrator
+</p>
+<br>
+<br>
+<br />
+
+<h2>Additional Configurations</h2>
+
+<h3 align="center">Configure Group Policy to Lockout the account after 5 attempts</h3>
+<p>
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/51a97893-2f84-4c64-a708-45cb4b9044db">
+</p>
+<p>
+log into DC-1 go to Group Policy Management. Right-Click "Account Lockout Policy". Via Group Policy Management Editor go to Computer configuration -> Policies -> Windows Setting -> Security Settings -> Account Policies -> Account Lockout policy. Configure the lockout settings, then link the policy the the specified domain. Force update the policy using Command Prompt by typing "gpupdate /force"
 </p>
 <br>
 <br>
