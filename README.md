@@ -23,11 +23,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>Network Security Groups</h2>
 
-<h3 align="center">Virtual Machines (Pre-Configured)</h3>
-<img width="959" alt="image" src="https://github.com/user-attachments/assets/c0bf980b-fde7-4818-9681-cf91097b5101">
+<h3 align="center">Virtual Machines</h3>
+<img width="959" alt="image" src="https://github.com/user-attachments/assets/3538c25d-5cb7-4fc8-807d-10c150378255">
 </p>
 <p>
-Two Virtual machines were created one named "DC-1" the other "Client-1" both are on the same virtual network, share the same resource group, and are in the same subnet.DC-1 was deployed with windows server 2022 while Client-1 was deployed with windows 10. Client-1's DNS settings have been configured to DC-1's private IP address.
+Three Virtual machines were created: "DC-1", "Client-1", and "Client-2" all are on the same virtual network, share the same resource group, and are in the same subnet.DC-1 was deployed with windows server 2022, Client-1 was deployed with windows 10, Client-2 was deployed with Ubuntu 22.04. Client-1's DNS settings have been configured to DC-1's private IP address.
 </p>
 <br>
 <br>
