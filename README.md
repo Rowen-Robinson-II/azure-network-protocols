@@ -18,17 +18,12 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 <h2>Operating Systems Used </h2>
 
 - Windows 10 (21H2)
-- Ubuntu Server 20.04
+- Ubuntu Server 22.04
 
-<h2>High-Level Steps</h2>
 
-- Virtual Machine (pre-configured)
-- Configure Group Policy to Lockout the account after 5 attempts
-- Enabling and Disabling Accounts
-- Observing Logs
+<h2>Network Security Groups</h2>
 
-<h2>Actions and Observations</h2>
-
+<h3 align="center">Virtual Machines (Pre-Configured)</h3>
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/c0bf980b-fde7-4818-9681-cf91097b5101">
 </p>
 <p>
@@ -38,6 +33,7 @@ Two Virtual machines were created one named "DC-1" the other "Client-1" both are
 <br>
 <br />
 
+<h3 align="center">Configure Group Policy to Lockout the account after 5 attempts</h3>
 <p>
 <img width="959" alt="image" src="https://github.com/user-attachments/assets/51a97893-2f84-4c64-a708-45cb4b9044db">
 </p>
@@ -48,7 +44,7 @@ log into DC-1 go to Group Policy Management. Right-Click "Account Lockout Policy
 <br>
 <br />
 
-
+<h3 align="center">Enabling and Disabling Accounts</h3>
 <p>
 <img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
 </p>
@@ -59,3 +55,37 @@ To disable/enable an account go to Active Directory Users and Computers find a u
 <br>
 <br />
 
+<h2>Inspecting Traffic Between Azure Virtual Machines</h2>
+
+<h3 align="center">Enabling and Disabling Accounts</h3>
+<p>
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+</p>
+<p>
+To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+</p>
+<br>
+<br>
+<br />
+
+<h3 align="center">Enabling and Disabling Accounts</h3>
+<p>
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+</p>
+<p>
+To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+</p>
+<br>
+<br>
+<br />
+
+<h3 align="center">Enabling and Disabling Accounts</h3>
+<p>
+<img width="958" alt="image" src="https://github.com/user-attachments/assets/84d53f5e-0488-45c0-b001-264dd8a5dee4">
+</p>
+<p>
+To disable/enable an account go to Active Directory Users and Computers find a user in the _EMPLOYEE folder right-click their name then disable/enable as needed
+</p>
+<br>
+<br>
+<br />
